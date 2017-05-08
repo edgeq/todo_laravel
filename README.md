@@ -40,7 +40,7 @@ You must give a full effort on every group and individual project.
 
 [Homework Submission](http://bootcampspot-v2.com)
 
-[Slack Domain SSM FILL IN](https://updateme.slack.com/)
+[Slack Domain](https://ucforl052017ft.slack.com/messages/@slackbot/)
 
 Live Office Hours: 45 minutes before class and 30 minutes after class
 
