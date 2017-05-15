@@ -44,7 +44,9 @@ You must give a full effort on every group and individual project.
 
 Live Office Hours: 45 minutes before class and 30 minutes after class
 
-## Video Folders 
+## Video Folder 
 **!! Bookmark me !!**
+
+<a target="_blank" href="https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=644ca93f-a1dd-42eb-ba6d-3f019e890130">Video Recordings</a>
 
 -----------------------------------------
