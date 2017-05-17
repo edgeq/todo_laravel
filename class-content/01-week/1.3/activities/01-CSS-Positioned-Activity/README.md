@@ -1,4 +1,4 @@
-# CSS Positionimg
+# CSS Positioning
 
 * Work with the same or different partners on this activity, but make sure **each** member of the group is typing out their own code! 
 
