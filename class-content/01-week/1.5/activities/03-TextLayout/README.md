@@ -6,7 +6,7 @@
 
 * Using Twitter bootstrap, create a layout that looks like:
 
-  ![text-layout activity design](Images/text-layout.png)
+  ![text-layout activity design](text-layout.png)
 
 * **HINT:** Spend some time prior to coding on drawing out the grid layout.
 
