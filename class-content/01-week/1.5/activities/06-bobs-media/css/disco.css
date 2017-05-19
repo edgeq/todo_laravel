@@ -1,0 +1,64 @@
+body {
+  transition: background-color ease .2s;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background-color: #d21034;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    background-color: #cf596e;
+  }
+}
+
+
+@media screen and (max-width: 980px) {
+  body {
+    background-color: #cf6b96;
+  }
+}
+@media screen and (max-width: 960px) {
+  body {
+    background-color: #be78cf;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  body {
+    background-color: #8974cf;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    background-color: #71b9cf;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  body {
+    background-color: #79cf86;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    background-color: #abcf57;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: #cf20b5;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    background-color: #cf5a00;
+  }
+}
