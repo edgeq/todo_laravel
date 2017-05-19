@@ -1,0 +1,25 @@
+a {
+	font-size: 1.8em;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	color: #d21034;
+}
+a:visited {
+	color: darkblue;
+}
+ul li:nth-child(2) {
+	text-decoration: underline;
+}
+ul li:nth-child(even) {
+	font-weight: bold;
+}
+ul li:nth-child(odd) {
+	font-style: italic;
+}
+ul li:first-child {
+	background-color: deeppink;
+}
