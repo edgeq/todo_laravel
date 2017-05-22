@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Sushi Prompt - Unsolved</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+  // Write code here!
+  var likeSushi = confirm('Do you like sushi?');
+  if (likeSushi) {
+    var preferredSushi = prompt('What kind of sushi do you like?');
+    alert('Nice, ' + preferredSushi + ' is a good one.');
+  } else {
+    alert('Screw you, loser.');
+  }
+
+  var summary = 'You ';
+  if (! likeSushi) {
+    summary += 'do not '
+  }
+  summary += 'like sushi.';
+  if (! likeSushi) {
+    summary += '\nYou suck!';
+  } else {
+    summary += '\nI love you!';
+	}
+  alert(summary);
+</script>
+
+</body>
+</html>

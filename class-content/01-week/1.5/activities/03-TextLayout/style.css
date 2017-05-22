@@ -1,0 +1,9 @@
+.redBorder {
+	border: 1px solid #d21034;
+}
+
+.greenBorder {
+	border: 1px solid forestgreen;
+	color: darkgreen;
+	font-weight: bold;
+}
