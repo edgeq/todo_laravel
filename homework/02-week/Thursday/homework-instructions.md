@@ -6,7 +6,7 @@ In this assignment, you'll create one of two possible computer games: Hangman or
 
 ### Remember
 
-You will be fully capable of doing this homework by the end of Saturday's class.
+You will be fully capable of doing this homework by the end of Wednesday's class.
 
 ### Before You Begin
 
