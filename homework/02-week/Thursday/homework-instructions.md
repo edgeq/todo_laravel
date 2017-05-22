@@ -1,4 +1,4 @@
-# Week 3 Assignment
+# Thursday Assignment
 
 ### Overview
 
