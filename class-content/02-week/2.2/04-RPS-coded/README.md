@@ -12,7 +12,7 @@ Rock: wins against scissors, loses to paper, and ties against itself.
 Paper: wins against rock, loses to scissors, and ties against itself.
 Scissors: wins against paper, loses to rock, and ties against itself.
 
-![3-RPS-Example-Picture](/images/Rock-paper-scissors.svg)
+![3-RPS-Example-Picture](images/Rock-paper-scissors.svg)
 
 * Do as much as you can on your own, but don't be afraid to ask for help if you feel your team is struggling.
 
