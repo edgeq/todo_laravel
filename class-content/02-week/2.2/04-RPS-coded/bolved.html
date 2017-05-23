@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Bob's RPS</title>
+</head>
+<body>
+
+<div id="game"></div>
+
+<script type="text/javascript">
+
+  var computerChoices = ["r", "p", "s"], winCounter = 0, lossCounter = 0,
+    tieCounter = 0;
+
+  document.onkeyup = function(event) {
+
+    var userGuess = event.key;
+    var computerGuess = computerChoices[Math.floor(
+      Math.random() * computerChoices.length)];
+    console.log('userGuess', userGuess, 'computerGuess', computerGuess);
+
+    if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+      // Select the div with the id "game", and insert the following HTML into it.
+      document.getElementById("game").innerHTML =
+        "you chose: " + userGuess + ". The computer chose: " + computerGuess;
+
+      if (userGuess === computerGuess) {
+        tieCounter ++;
+      }
+      //Rock vs Scissors
+      if (userGuess === 'r' && computerGuess === 's') {
+        winCounter ++;
+      }
+      //Rock vs Paper
+      if (userGuess === 'r' && computerGuess === 'p') {
+        lossCounter ++;
+      }
+      //Paper vs. Scissors
+      if (userGuess === 'p' && computerGuess === 's') {
+        lossCounter ++;
+      }
+      //Paper vs. Rock
+      if (userGuess === 'p' && computerGuess === 'r') {
+        winCounter ++;
+      }
+      //Scissors vs. Rock
+      if (userGuess === 's' && computerGuess === 'r') {
+        lossCounter ++;
+      }
+      //Scissors vs. Paper
+      if (userGuess === 's' && computerGuess === 'p') {
+        winCounter ++;
+      }
+      //TODO add elseif statements to check the other outcomes!
+      console.log('Wins: ', winCounter, 'Losses: ', lossCounter, 'Ties: ',
+        tieCounter)
+      var html = "you chose: " + userGuess + ". The computer chose: " + computerGuess + '<br/>';
+      html += 'Wins: ' + winCounter +
+				 '<br/>Losses: ' + lossCounter +
+				 '<br/>Ties: ' + tieCounter;
+      document.getElementById("game").innerHTML = html;
+    } else {
+      console.error('Please press R,P,S');
+    }
+
+  };
+
+</script>
+
+</body>
+</html>
