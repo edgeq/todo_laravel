@@ -6,3 +6,6 @@ var joanOfArcInfoValues = ["Jehanne la Pucelle.", "Domremy, a village in northea
   "Peasant girl, daughter of a farmer, who rose to become Commander of the French army.",
   "Took an arrow to the shoulder and a crossbow bolt to the thigh while trying to liberate Paris.",
   "Stands for French unity and nationalism."];
+var realNameIndex = joanOfArcInfoParts.indexOf('Real Name');
+
+joanOfArcInfoValues[realNameIndex]
