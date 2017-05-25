@@ -11,10 +11,16 @@
 
   <script type="text/javascript">
 
+
     $("#empty-div").html("<h1>Hello friends!</h1>");
 
     // If we needed each line to be its own div, we could just as easily create a new div.
+
+    $("#empty-div").html("Hello friends!");
+
+    // If we needed each line to be its own div, we could just as easily create a new div.
     var newDiv = $("<div>");
+    newDiv.addClass('foobar')
     newDiv.html("A pleasure to meet you!");
 
     // We can then  append it to the other div using the same ".append" method.
