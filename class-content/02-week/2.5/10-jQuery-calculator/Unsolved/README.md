@@ -1,6 +1,6 @@
 # jQuery Calculator
 
-See the `Unsolved HTML file for a skeleton.
+See the `Unsolved HTML` file for a skeleton.
 
 ## Bonus
 1. Add animations to the events
