@@ -25,7 +25,7 @@
       // Step 1:
       // Use the following link inside the Audio function below:
       // https://p.scdn.co/mp3-preview/ed5a443bc86176135ebca8a114f66f4d814d4c90
-      var audio = new Audio("LINK AN AUDIO FILE HERE");
+      var audio = new Audio("https://p.scdn.co/mp3-preview/ed5a443bc86176135ebca8a114f66f4d814d4c90");
 
       //  Step 2: do the following between the --- comments
       //  after 5 seconds, execute the fiveSeconds function
@@ -35,6 +35,15 @@
         //CODE STEP TWO HERE
       // ---------------------
 
+
+        var counter = 200;
+      var interval = setInterval(function  (){
+        counter--;
+        if (counter == 0) {
+          clearInterval(interval);
+        }
+        console.log('RUN', counter);
+      }, 10);
 
       // Step 3:
       // Fill in the blanks to these functions.

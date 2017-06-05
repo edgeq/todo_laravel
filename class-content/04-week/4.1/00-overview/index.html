@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=en-us"/>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+					language="javascript"></script>
+</head>
+<body>
+<script>
+  jQuery(function($) {
+    //Check to make sure the browser supports localStorage
+    if (window.localStorage) {
+
+      // Sets the value using the 'key' key
+      window.localStorage.setItem('key', 'value');
+
+      // getItem
+      // Returns 'value'
+      window.localStorage.getItem('key');
+
+      // Shows how many items are in the storage for THIS DOMAIN
+      var number = window.localStorage.length;
+
+      // Removes the item with the key named 'key'
+      window.localStorage.removeItem('key');
+
+			// Clears ALL localStorage for the domain (use caution!)
+			window.localStorage.clear();
+
+      var myVariable = window.localStorage.getItem('wins');
+      if (typeof myVariable === 'object') {
+        //set the default for the window.localStorage.getItem to 0
+        myVariable = 0;
+      }
+    }
+
+  });
+</script>
+</body>
+</html>

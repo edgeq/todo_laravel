@@ -32,6 +32,7 @@
 
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
+      $(document).on("click", ".movie", alertMovieName);
       // Initial array of movies
       var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 
@@ -39,7 +40,7 @@
       function alertMovieName() {
 
         // YOUR CODE GOES HERE!!!
-
+        alert("click" + $(this).attr('data-name'));
       }
 
       // Function for displaying movie data
@@ -85,7 +86,7 @@
       // We're adding the event listener to the document itself because it will
       // work for dynamically generated elements
       // $(".movies").on("click") will only add listeners to elements that are on the page at that time
-      $(document).on("click", ".movie", alertMovieName);
+
 
       // Calling the renderButtons function to display the intial buttons
       renderButtons();

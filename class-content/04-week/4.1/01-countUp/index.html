@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=en-us"/>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"
+					language="javascript"></script>
+</head>
+<body>
+<h1>I love counting up
+	<span id="count"></span>
+</h1>
+<h2>Reload the page to see the magick!</h2>
+<button id="reset">Reset the count</button>
+<script>
+  //TODO fill in each of the blank comments with Pseudo code of what we are doing
+  jQuery(function($) {
+    //
+    var $count = $("#count"), count;
+
+    //
+    if (window.localStorage) {
+
+      //
+      count = window.localStorage.getItem('count');
+
+      //
+      if (typeof count === 'object') {
+        //
+				count = 0;
+      }
+
+      //
+      count++;
+
+      //
+      window.localStorage.setItem('count', count	);
+
+      //
+			$count.html(count);
+
+			//jQuery Review ;-)
+			//
+      $("#reset").on('click', function  (){
+        //
+        window.localStorage.removeItem('count');
+        //
+        $count.html('0');
+      });
+    }
+
+  });
+</script>
+</body>
+</html>
