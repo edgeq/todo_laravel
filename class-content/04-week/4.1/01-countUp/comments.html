@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=en-us"/>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"
+					language="javascript"></script>
+</head>
+<body>
+<h1>I love counting up
+	<span id="count"></span>
+</h1>
+<h2>Reload the page to see the magick!</h2>
+<button id="reset">Reset the count</button>
+<script>
+  //TODO fill in each of the blank comments with Pseudo code of what we are doing
+  jQuery(function($) {
+    // Declare two variables, store jQuery to $count, save count for later.
+    var $count = $("#count"), count;
+
+    // make sure we have localStorage support
+    if (window.localStorage) {
+
+      // set our count variable to the result returned by getItem()
+      count = window.localStorage.getItem('count');
+
+      // test if the getItem has been set.
+      if (typeof count === 'object') {
+        // Has NOT been set, initialize our count at 0
+				count = 0;
+      }
+
+      // iterate (add to our count)
+      count++;
+
+      // set the count key to our incremented variable
+      window.localStorage.setItem('count', count	);
+
+      // put it to our HTML
+			$count.html(count);
+
+			//jQuery Review ;-)
+			// select the id="reset" bind to click event
+      $("#reset").on('click', function  (){
+        // remove our key 'count'
+        window.localStorage.removeItem('count');
+        // set HTML to 0
+        $count.html('0');
+      });
+    }
+
+  });
+</script>
+</body>
+</html>
