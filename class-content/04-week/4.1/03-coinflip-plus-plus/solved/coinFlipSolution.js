@@ -3,7 +3,7 @@ var tailsCount = 0;
 var wins = 0;
 var losses = 0;
 
-
+window.
 //We've initialized our counters at 0, now we check the window to see if they've already been saved.
 headsCount = window.localStorage.getItem('headsCount');
 if (typeof headsCount === 'object') {
