@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=en-us"/>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+					language="javascript"></script>
+</head>
+<body>
+<script>
+  jQuery(function($) {
+    //Check to make sure the browser supports sessionStorage
+    if (window.sessionStorage) {
+
+      // Sets the value using the 'key' key
+      window.sessionStorage.setItem('key', 'value');
+
+      // getItem
+      // Returns 'value'
+      var gotItem = window.sessionStorage.getItem('key');
+      console.log('GotItem', gotItem);
+
+      // Shows how many items are in the storage for THIS DOMAIN
+      var number = window.sessionStorage.length;
+      console.log('SessionStorage Length', number);
+
+      // Removes the item with the key named 'key'
+      window.sessionStorage.removeItem('key');
+
+			// Clears ALL sessionStorage for the domain (use caution!)
+			window.sessionStorage.clear();
+
+      var myVariable = window.sessionStorage.getItem('wins');
+      if (typeof myVariable === 'object') {
+        //set the default for the window.sessionStorage.getItem to 0
+        myVariable = 0;
+      }
+    }
+
+  });
+</script>
+</body>
+</html>
