@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Favorite Movies</title>
+	<link rel="stylesheet"
+				href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+				integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+				crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+	<label for="search">Search:</label>
+	<input type="text" name="search" id="search"/>
+	<input type="button" name="Search" id="searchButton" value="Search"/>
+	<p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+	<table class="table">
+		<thead>
+		<tr>
+			<th>Poster</th>
+			<th>Movie Name</th>
+			<th>Year</th>
+		</tr>
+		</thead>
+		<tbody id="response">
+		<!--Here is where we append the search results-->
+		</tbody>
+	</table>
+</div>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+  // The below code fills in the first row of the table
+  $("#searchButton").on('click', function(e) {
+    //make sure we stay on this page
+    e.preventDefault();
+    var $search = $("#search");
+    var searchString = $search.val().trim();
+    //Check if we have a saved string from localStorage
+    if (window.localStorage.getItem(searchString)) {
+      //Get the locally stored version
+      response = window.localStorage.getItem(searchString);
+      //Convert string back into JSON
+      response = JSON.parse(response);
+      //Call our formatter to create HTML from the JSON
+      generateHTMLTables(response);
+    } else {
+      //No saved version, run the AJAX request
+      var queryURL = "http://www.omdbapi.com/?s=" + searchString + "&y=&plot=short&apikey=40e9cece";
+      $.ajax({
+        url       : queryURL,
+        method    : "GET",
+				//This shows a loading gif
+        beforeSend: function() {
+          $("#response").empty().append(
+            '<tr><td colspan="3"><img src="gear.gif" height="120" width="120" alt="" /></td>')
+        }
+      }).done(function(response) {
+        console.log('response', response);
+        //Convert the JSON object into a localStorage friendly string
+				var responseString = JSON.stringify(response);
+        console.log('responseString', responseString);
+        //Save the string version to localStorage
+				window.localStorage.setItem(searchString, responseString);
+        //Remove our loading gif
+        $("#response").empty();
+        //Get the search results array from the response
+        generateHTMLTables(response);
+      });
+    }
+  });
+  /**
+	 * This takes a JSON OMDB response and build up an HTML table,
+	 * appending it to the #response
+   * @param response object
+   */
+  function generateHTMLTables(response) {
+    $.each(response.Search, function(key, value) {
+      //Loop through each
+      console.log('result', key, value);
+      var $row = $('<tr>');
+      if ('N/A' == value.Poster) {
+        $row.append('<td>No Poster</td>');
+      } else {
+        $row.append(
+          '<td><img class="image" src="' + value.Poster + '" alt="' + value.Title + '" /></td>');
+      }
+      $row.append('<td>' + value.Title + '</td>');
+      $row.append('<td>' + value.Year + '</td>');
+      $row.appendTo('#response');
+    })
+
+  }
+
+  // Step 2: copy the above and try and figure out what to change to fill in the
+  // second row.
+
+  // Step 3: using the same logic, fill in the third row
+</script>
+<style>
+	.image {
+		width: 100px;
+		height: auto;
+		transition: all .2s linear;
+	}
+
+	.image:hover {
+		width: 250px;
+	}
+</style>
+</body>
+
+</html>
