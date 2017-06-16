@@ -1,6 +1,6 @@
 //TODO Grab the request package... 
 // @link https://nodejs.org/en/docs/
-
+var request = require('request');
 // Run the request function...
 // The request function takes in a URL then returns three arguments:
 // 1. It provides an error if one exists.
