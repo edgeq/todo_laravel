@@ -52,30 +52,11 @@ inquirer.prompt([
     message: "Okay fine. You can stay. But only if you say the magic password."
   }
 
-]).then(function(user) {
+]).then((response) => {
+  console.log('response', response);
 
-  // If the user guesses the password...
-  if (user.myPassword === "myHouse") {
-
-    console.log("==============================================");
-    console.log("");
-    console.log("Well a deal's a deal " + user.name);
-    console.log("You can stay as long as you like.");
-    console.log("Just put down the " + user.carryingWhat.join(" and ") + ". It's kind of freaking me out.");
-    console.log("");
-    console.log("==============================================");
+  if (response.myPassword === '1234') {
+    console.log('Thats a weak password, yo!');
   }
 
-
-  // If the user doesn't guess the password...
-  else {
-
-    console.log("==============================================");
-    console.log("");
-    console.log("Sorry " + user.name);
-    console.log("I'm calling the cops!");
-    console.log("");
-    console.log("==============================================");
-
-  }
 });

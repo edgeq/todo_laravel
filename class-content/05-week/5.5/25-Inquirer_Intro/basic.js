@@ -8,9 +8,15 @@ inquirer.prompt([
   {
     type: "input",
     message: "What is your name?",
-    name: "name"
+    name: "userName"
   },
+  {
+    type: "confirm",
+    message: "Are you sure:",
+    name: "confirm",
+    default: true
 
+  },
   // Here we create a basic password-protected text prompt.
   {
     type: "password",
@@ -18,6 +24,21 @@ inquirer.prompt([
     name: "password"
   },
 
+  {
+    type: "confirm",
+    message: "Are you sure:",
+    name: "confirm",
+    default: true
+
+  },
+
+  {
+    type: "confirm",
+    message: "Are you sure:",
+    name: "confirm",
+    default: true
+
+  },
   // Here we give the user a list to choose from.
   {
     type: "list",
@@ -34,33 +55,17 @@ inquirer.prompt([
     default: true
 
   }
+]).then(function(inquirerResponse) {
+  // If the inquirerResponse confirms, we displays the inquirerResponse's name and pokemon from the answers.
+  if (inquirerResponse.confirm) {
 
-// Once we are done with all the questions... "then" we do stuff with the answers
-// In this case, we store all of the answers into a "user" object that inquirer makes for us.
-]).then(function(user) {
-
-
-  // If we log that user as a JSON, we can see how it looks.
-  console.log(JSON.stringify(user, null, 2));
-
-  // If the user confirms, we displays the user's name and pokemon from the answers.
-  if (user.confirm) {
-
-    console.log("==============================================");
-    console.log("");
-    console.log("Welcome " + user.name);
-    console.log("Your " + user.pokemon + " is ready for battle!");
-    console.log("");
-    console.log("==============================================");
-
-  // If the user does not confirm, then a message is provided and the program quits.
-  }
-
-  else {
+    console.log("Welcome " + inquirerResponse.userName);
+    console.log("Your " + inquirerResponse.pokemon + " is ready for battle!");
+  } else {
 
     console.log("");
     console.log("");
-    console.log("That's okay " + user.name + ", come again when you are more sure.");
+    console.log("That's okay " + inquirerResponse.name + ", come again when you are more sure.");
     console.log("");
     console.log("");
 
