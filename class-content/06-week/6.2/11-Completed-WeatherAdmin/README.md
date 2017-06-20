@@ -24,6 +24,6 @@
 
 * This activity borrows from all of the concepts we've covered this week. Pay attention to the following activities:
 
-  * Classroom Example (6.2)
+  * Classroom Example (11.2)
 
-  * Weather-js Example (5.2)
+  * Weather-js Example (10.2)
