@@ -10,3 +10,9 @@
 ### [Unit 12 - MySQL](01-Class-Content/12-mysql/02-Homework)
 
 [Complete Playlist (Exercises)](https://www.youtube.com/playlist?list=PLgJ8UgkiorCncqIRVifiwiP7VoMpcCq0V)
+
+[Homework Solution Video - Customer](https://www.youtube.com/watch?v=oouxVn14qyk)
+
+[Homework Solution Video - Manager](https://www.youtube.com/watch?v=q9ANiugK21Y)
+
+[Homework Solution Video - Executive](https://www.youtube.com/watch?v=3ym0-z6k_WM)
