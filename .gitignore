@@ -2,3 +2,4 @@
 .DS_Store
 /class-content/06-week/6.5/the-simpsons-by-the-data/
 node_modules/
+yarn.lock
