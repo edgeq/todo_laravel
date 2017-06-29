@@ -11,3 +11,8 @@
     * hitpoints
     * special powers
 1. Insert 5 wizards into the table
+
+
+### Bonus
+
+* Create a many:many relationship between `wizards` and `powers`
