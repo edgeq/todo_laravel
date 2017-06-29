@@ -41,22 +41,26 @@ app.get("/", function(req, res) {
 });
 
 app.get("/list", function(req, res) {
-
+  //Query MySQL
   connection.query('SELECT * FROM `wizards`', function(err, results) {
     if (err) {
       throw err;
     }
+    //Create a string for HTML rendering
     let html = '';
-    html +=
-      '<thead><tr><th>Name</th><th>Hitpoints</th><th>Special Powers</th></tr></thead>'
+    //Loop through the results
     results.forEach(function(value) {
-      html += '<tr>'
-      console.log('value', value.name);
-      html += `<td>${value.name}</td>`;
-      html += `<td>${value.hitpoints}</td>`;
-      html += `<td>${value.powers}</td>`;
+      console.log('value', value);
+      //Build one row per result
+      html += '<tr>';
+      //Set the values for each row and column from the database
+      //these MUST match the column names from the previous activity!
+      html +=   `<td>${value.name}</td>`;
+      html +=   `<td>${value.hitpoints}</td>`;
+      html +=   `<td>${value.powers}</td>`;
       html += '</tr>'
     });
+    //Render our HTML page
     res.end(`<!DOCTYPE html><html><head>
       <title>Wizard Create Form</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -67,14 +71,21 @@ app.get("/list", function(req, res) {
         <h1>My Wizards in HTML</h1>
         <a href="/" class="btn btn-primary" >Home</a>
         <table class="table">
-        ${html}
+          <thead>
+            <tr>
+              <th>Name</th><th>Hitpoints</th><th>Special Powers</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${html}
+          </tbody>
         </table>
       </div>
       </body></html>`);
 
   });
 
-})
+});
 
 app.post("/create", function(req, res) {
   console.log('request body', req.body);
