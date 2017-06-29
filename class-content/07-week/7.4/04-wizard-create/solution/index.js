@@ -93,12 +93,12 @@ app.post("/create", function(req, res) {
   let hitpoints = req.body.hitpoints;
   let powers = req.body.power;
   //This inserts everything into the db
-  connection.query('INSERT INTO `wizards` SET ?', {name, hitpoints, powers}, function  (err, data){
+  connection.query('INSERT INTO `wizards` SET ?', {name: name, hitpoints: hitpoints, powers:powers}, function  (err, data){
     if (err) {
       throw err;
     }
     console.log('data', data);
-  })
+  });
   //@link https://expressjs.com/en/api.html#res.redirect
   //Redirects to our list view
   res.redirect('/list');
