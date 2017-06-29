@@ -1,4 +1,4 @@
-# Express Wizard Lit
+# Express Wizard _Lit_ List
 
 ## Prerequisites
 1. Make sure you install all of the requirements inside of `package.json` - (Hint: `npm ????`)
