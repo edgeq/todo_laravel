@@ -39,10 +39,8 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-//TODO code out the list view for the wizards list
 app.get("/list", function(req, res) {
 
-  //TODO get all of the wizard from the previous step
   connection.query('SELECT * FROM `wizards`', function(err, results) {
     if (err) {
       throw err;
