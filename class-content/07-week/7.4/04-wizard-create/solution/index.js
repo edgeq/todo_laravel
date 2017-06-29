@@ -92,15 +92,15 @@ app.post("/create", function(req, res) {
   let name = req.body.name;
   let hitpoints = req.body.hitpoints;
   let powers = req.body.power;
-  //TODO write a SQL query to create a new wizard
+  //This inserts everything into the db
   connection.query('INSERT INTO `wizards` SET ?', {name, hitpoints, powers}, function  (err, data){
     if (err) {
       throw err;
     }
     console.log('data', data);
   })
-  //TODO read the expressjs docs @link https://expressjs.com/en/api.html#res.redirect
-  //TODO redirect to the list page, which will show the newly inserted wizard
+  //@link https://expressjs.com/en/api.html#res.redirect
+  //Redirects to our list view
   res.redirect('/list');
 });
 // =============================================================
