@@ -1,4 +1,4 @@
-# Express Contact Form
+# Express Wizard Form
 
 ## Prerequisites
 1. Make sure you install all of the requirements inside of `package.json` - (Hint: `npm ????`)
