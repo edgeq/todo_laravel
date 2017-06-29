@@ -1,21 +1,28 @@
 // Dependencies
 // =============================================================
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path");
-var mysql = require('mysql');
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+const mysql = require('mysql');
 
 // Sets up the Express App
 // =============================================================
-var app = express();
-var PORT = process.env.PORT || 3000;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 //TODO make sure you use the right DB
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host    : 'localhost',
   user    : 'root',
   password: '',
   database: 'ParryHotter'
+});
+
+connection.connect(function(error) {
+  if (error) {
+    throw error;
+  }
+  console.log('Connected to MySQL server, as ID = ', connection.threadId);
 });
 
 // Sets up the Express app to handle data parsing
@@ -33,13 +40,21 @@ app.get("/", function(req, res) {
 });
 
 //TODO code out the list view for the wizards list
-app.get("/????", function (req, res){
+app.get("/????", function(req, res) {
+
   //TODO get all of the wizard from the previous step
   // connection.query()
+
   //TODO render the wizards into our view
-  res.end(`<!DOCTYPE html><html><head><title>Wizard Create Form</title> </head><body>
-    <h1>TODO - List wizards!</h1>
-    </body></html>`);
+
+  res.end(
+    `<!DOCTYPE html><html><head>
+      <title>Wizard Create Form</title>
+      </head><body>
+        <h1>TODO - List wizards!</h1>
+      </body></html>`
+  );
+
 });
 
 app.post("/create", function(req, res) {
