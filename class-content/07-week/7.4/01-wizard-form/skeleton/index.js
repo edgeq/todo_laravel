@@ -23,22 +23,22 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.post("/contact", function(req, res) {
+app.post("/create", function(req, res) {
   console.log('request body', req.body);
-  //TODO how do I get the name?
+  //TODO get the wizard name
   // let name = req.body.???;
-  //TODO how do I get the email?
-  // let email = req.body.???;
-  //TODO how do I get the message?
-  // let message = req.body.???;
+  //TODO get the wizard hitpoints
+  // let hitpoints = req.body.???;
+  //TODO get the wizard special power
+  // let power = req.body.???;
   //TODO remove me after fixing the above
   return res.end(`Raw data: ${JSON.stringify(req.body)}`);
 
   //TODO enable this after grabbing the variables from the POST(man) ;-)
   res.end(`<!DOCTYPE html><html><head><title>Contact Form</title> </head><body>
      Your name: ${name} <br/> 
-     Your email: ${email} <br/> 
-     Your Message: ${message} <br/>
+     Your email: ${hitpoints} <br/> 
+     Your Message: ${power} <br/>
     </body></html>`)
 });
 // =============================================================

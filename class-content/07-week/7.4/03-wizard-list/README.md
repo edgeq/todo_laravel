@@ -7,4 +7,4 @@
 4. Make sure `MySQL` is still running
 
 ## TODO
-1. Read through the TODOs and make a route that lists all of the wizards from the `MySQL` table
+1. Read through the TODOs and make a route that lists all of the wizards from the `MySQL` table. 
