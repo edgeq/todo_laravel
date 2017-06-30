@@ -83,8 +83,6 @@ While using Heroku, you may be required to supply a Credit Card, be prepared for
 
   * In `models`, make a `model.js` file.
 
-    * Also inside `model.js`, create the code that will call the ORM functions using specific input for the ORM.
-
     * Export at the end of the `model.js` file.
 
 #### Controller setup
