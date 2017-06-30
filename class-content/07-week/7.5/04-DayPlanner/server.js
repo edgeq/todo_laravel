@@ -8,8 +8,6 @@ var port = 3000;
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Override with POST having ?_method=DELETE
-app.use(methodOverride("_method"));
 
 var exphbs = require("express-handlebars");
 
@@ -56,7 +54,7 @@ app.post("/", function(req, res) {
   });
 });
 
-app.delete("/:id", function(req, res) {
+app.post("/delete/:id", function(req, res) {
   connection.query("DELETE FROM plans WHERE id = ?", [req.params.id], function(err, result) {
     if (err) {
       throw err;
@@ -66,10 +64,10 @@ app.delete("/:id", function(req, res) {
   });
 });
 
-app.put("/", function(req, res) {
+app.post("/update/:id", function(req, res) {
 
   connection.query("UPDATE plans SET plan = ? WHERE id = ?", [
-    req.body.plan, req.body.id
+    req.body.plan, req.params.id
   ], function(err, result) {
     if (err) {
       throw err;
