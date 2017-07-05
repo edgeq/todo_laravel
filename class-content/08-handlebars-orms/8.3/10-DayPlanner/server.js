@@ -40,23 +40,24 @@ app.get("/", function(req, res) {
       throw err;
     }
 
-    res.render("???", {???});
+    res.render("index", { plans: data  });
 
   });
 });
 
-app.post("???", function(req, res) {
-  connection.query("INSERT INTO plans (plan) VALUES (?)", [req.body.???],
+app.post("/", function(req, res) {
+  connection.query("INSERT INTO plans (plan) VALUES (?)", [req.body.plan],
     function(err, result) {
       if (err) {
         throw err;
       }
       //TODO what do we do?
+      res.redirect('/');
     });
 });
 
-app.post("/delete/:id", function(req, res) {
-  connection.query("DELETE FROM plans WHERE id = ?", [req.params.???],
+app.post("/delete/", function(req, res) {
+  connection.query("DELETE FROM plans WHERE id = ?", [req.body.id],
     function(err, result) {
       if (err) {
         throw err;
@@ -64,17 +65,19 @@ app.post("/delete/:id", function(req, res) {
 
 
       //TODO what do we do?
+      res.redirect('/');
     });
 });
 
 app.post("/update", function(req, res) {
 
   connection.query("UPDATE plans SET plan = ? WHERE id = ?",
-    [req.body.???, req.body.???], function(err, result) {
+    [req.body.plan, req.body.id], function(err, result) {
       if (err) {
         throw err;
       }
 
+      res.redirect('/');
       //TODO what do we do?
     });
 });

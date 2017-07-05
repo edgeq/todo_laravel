@@ -38,3 +38,6 @@ connection.connect(function(err) {
 app.listen(port, function() {
   console.log("Listening on PORT " + port);
 });
+
+
+//TODO write the routes and MySQL queries to get this app running!

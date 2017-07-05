@@ -48,6 +48,7 @@ module.exports = function(app) {
 
     // Here we take the result of the user"s survey POST and parse it.
     var userData = req.body;
+    console.log('userData', userData);
     var userScores = userData.scores;
 
     // This variable will calculate the difference between the user"s scores and the scores of
