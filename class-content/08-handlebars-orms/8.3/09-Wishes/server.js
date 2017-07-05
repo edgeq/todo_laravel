@@ -40,6 +40,7 @@ app.get("/", function(req, res) {
     if (err) {
       throw err;
     }
+    console.log('data', data);
 
     res.render("index", { wishes: data });
   });

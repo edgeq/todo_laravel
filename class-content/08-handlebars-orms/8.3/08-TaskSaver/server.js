@@ -17,6 +17,7 @@ app.set("view engine", "handlebars");
 
 var mysql = require("mysql");
 
+
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -41,12 +42,13 @@ app.get("/", function(req, res) {
     if (err) throw err;
 
     // Test it
-    // console.log('The solution is: ', data);
+    console.log('The solution is: ', data);
 
     // Test it
     // res.send(data);
 
     //Now - how do you send the index handlebars template?
+    res.render('index', {tasks: data});
     //    How do you pass the tasks to it?
   });
 });
@@ -63,6 +65,7 @@ app.post("/", function(req, res) {
     if (err) throw err;
 
     //What do we always do after a POST?
+    res.redirect('/');
   });
 });
 
