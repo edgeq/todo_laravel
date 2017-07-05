@@ -40,7 +40,7 @@ app.get("/", function(req, res) {
       throw err;
     }
 
-    res.render("index", {plans: data});
+    res.render("???", {???});
 
   });
 });
