@@ -1,4 +1,5 @@
 var connection = require("./connection.js");
+var mysql = require('mysql');
 
 // Object Relational Mapper (ORM)
 
@@ -13,6 +14,22 @@ var orm = {
     var queryString = "SELECT ?? FROM ?? ORDER BY ?? DESC";
     console.log(queryString);
     connection.query(queryString, [whatToSelect, table, orderCol], function(err, result) {
+      console.log(result);
+    });
+  },
+  selectAndNewOrder: function(whatToSelect, table, orderCol, Up) {
+    if (Up === true){
+      Up = 'ASC'
+    } else {
+      Up = 'DESC'
+    };
+    var queryString = "SELECT ?? FROM ?? ORDER BY ?? " + Up ;
+    let queryParams = [whatToSelect, table, orderCol, Up];
+    var formatQuery = mysql.format(queryString, queryParams)
+    console.log(formatQuery)
+    console.log('up', Up);
+
+    connection.query(queryString, queryParams, function(err, result) {
       console.log(result);
     });
   },
