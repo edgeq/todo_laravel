@@ -1,3 +1,4 @@
+let webpack = require('webpack');
 module.exports = {
 
   // This is the entry point or start of our react applicaton
@@ -25,6 +26,11 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false }
+    })
+  ],
   // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
   // Without this the console says all errors are coming from just coming from bundle.js
   devtool: "eval-source-map"
