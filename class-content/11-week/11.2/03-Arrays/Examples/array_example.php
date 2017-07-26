@@ -1,18 +1,28 @@
 <?php
 
 // Arrays in PHP are similar to those in JavaScript.
-$names_list = ['Goethe', 'Ibsen', 'Strindberg'];
+$names_list        = [ 'Goethe', 'Ibsen', 'Strindberg' ];
+$old_array         = array( 'Bob', 'Is', 'Old' );
+$associative_array = [
 
-// You index into them identically ... 
-echo "$names_list[0] wrote Dr Faust.\n";
-
-// ... You get the length using a "count" function:
-echo "There are " . count($names_list) . " names in your list.\n";
-
-echo str_repeat('=', 12) . "\n";
-
-// ... And you can iterate over them:
-
-foreach ($names_list as $name) {
-  echo "$name is a fantastic artist!\n";
+	"one"          => "value1",
+	"name"         => [ 'Bob', 'John' ],
+	"language"     => 'PHP',
+	"key-to-array" => [
+		'this',
+		'is',
+		'an',
+		'array'
+	]
+];
+printArray( $associative_array);
+printArray( $old_array);
+printArray( $names_list);
+function printArray ($array) {
+	echo str_repeat( '*', 20 ) . PHP_EOL;
+	foreach ( $array as $key => $value ) {
+		echo "Key = $key" . PHP_EOL;
+		echo print_r( $value, true) . PHP_EOL;
+	}
+	echo str_repeat( '*', 20 ) . PHP_EOL;
 }
