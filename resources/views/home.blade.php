@@ -29,9 +29,9 @@
 
 
         <ul class="list-unstyled">
-          <?php foreach ($todoitems as $todoitems) : ?>
-            <li><?= $todoitems; ?> <input type="checkbox" aria-label="..."></li>
-          <?php endforeach; ?>
+          @foreach ($todoitems as $todoitems)
+            <li>{{ $todoitems }} <input type="checkbox" aria-label="..."></li>
+          @endforeach
         </ul>
 
 
