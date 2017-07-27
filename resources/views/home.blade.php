@@ -26,7 +26,15 @@
     <div class="row">
       <div class="col-md-12">
         <h2>Our Lists</h2>
-        
+
+
+        <ul class="list-unstyled">
+          <?php foreach ($todoitems as $todoitems) : ?>
+            <li><?= $todoitems; ?> <input type="checkbox" aria-label="..."></li>
+          <?php endforeach; ?>
+        </ul>
+
+
       </div>
     </div>
   </div>

@@ -12,5 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+
+  $todoitems = [
+    'Install php',
+    'Install composer',
+    'Get composer to work',
+    'Fight some more with composer',
+    'Install Laravel',
+    'Pray Laravel works',
+    'Fix errors',
+    'Write list'
+  ];
+
+    return view('home', compact('todoitems'));
+});
+
+
+
+Route::get('blade', function () {
+    return view('child');
 });
