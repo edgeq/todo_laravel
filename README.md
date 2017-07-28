@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 -----------------------------------------
 # UCF Coding Bootcamp
 
@@ -50,3 +51,6 @@ Live Office Hours: 45 minutes before class and 30 minutes after class
 <a target="_blank" href="https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=644ca93f-a1dd-42eb-ba6d-3f019e890130">Video Recordings</a>
 
 -----------------------------------------
+=======
+# laravel_to_do
+>>>>>>> f100a79b886b9cad19bb0dc3ebf11de2438bbb06
