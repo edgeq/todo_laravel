@@ -1,12 +1,15 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once 'student.php';
+require_once __DIR__ .  '../../student.php';
 
 class StudentTests extends TestCase
 {
 
 
+	/**
+	 * @covers student
+	 */
 	public function testCreateNewStudent () {
 		$student = new student( 'I love testing mc. testerson', '407-867-5309');
 		$this->assertInstanceOf( 'student', $student);
@@ -42,6 +45,5 @@ class StudentTests extends TestCase
 		$this->assertSame( $gpa, $student->getGPA());
 
 	}
-
 
 }
