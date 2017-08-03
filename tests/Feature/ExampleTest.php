@@ -20,4 +20,11 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+	public function testTODOHello ()
+	{
+		$response= $this->get( '/todo');
+		$response->assertSee( 'HELLOW ');
+
+	}
 }
+

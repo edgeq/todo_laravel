@@ -11,24 +11,25 @@
 |
 */
 
-Route::get('/', function () {
+Route::get( '/',
+	function () {
 
-  $todoitems = [
-    'Install php',
-    'Install composer',
-    'Get composer to work',
-    'Fight some more with composer',
-    'Install Laravel',
-    'Pray Laravel works',
-    'Fix errors',
-    'Write list'
-  ];
+		$todoitems = [
+			'Make sure blades work',
+			'Check out the routes, yo',
+			'Install php',
+			'Install composer',
+			'Get composer to work',
+			'Fight some more with composer',
+			'Install Laravel',
+			'Pray Laravel works',
+			'Fix errors',
+			'Write list'
+		];
 
-    return view('home', compact('todoitems'));
-});
-
-
-
-Route::get('blade', function () {
-    return view('child');
-});
+		return view( 'home', [
+			'title' =>"List of my TODOS",
+			'todoitems' => $todoitems
+		]  );
+	} );
+Route::resource('/todo', 'TodoController');
