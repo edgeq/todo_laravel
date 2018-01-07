@@ -32,4 +32,6 @@ Route::get( '/',
 			'todoitems' => $todoitems
 		]  );
 	} );
+
+	
 Route::resource('/todo', 'TodoController');
