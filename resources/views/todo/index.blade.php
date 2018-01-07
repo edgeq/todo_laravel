@@ -1,5 +1,7 @@
 @extends('home')
 @section('content')
+<h1>Tasks</h1>
+<a href="{{route('todo.create')}}" class="btn btn-success btn-xs">Add a Task</a>
 <div class="row">
   <ul>
     @foreach($todos as $todo)

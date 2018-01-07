@@ -27,7 +27,6 @@
     </div>
 </div>
 <div class="container">
-  <h1>Tasks</h1>
 
       @yield('content')
 
