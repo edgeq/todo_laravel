@@ -1,10 +1,18 @@
-<h1>Hello World</h1>
+@extends('home')
+@section('content')
+<div class="row">
+  <ul>
+    @foreach($todos as $todo)
+    <li>
+      {{$todo->text}}
+        @if($todo->completed)
+        <span class="text-success">Done!</span>
+        @else
+        <span class="text-danger">Not Done!</span>
 
-@foreach($todos as $todo)
-  {{$todo->text}}
-  @if($todo->completed)
-    DONE
-  @else
-      NOT DONE
-  @endif
-@endforeach
+        @endif
+      </li>
+      @endforeach
+  </ul>
+</div>
+@endsection

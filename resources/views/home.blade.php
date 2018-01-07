@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>{{$title}}</title>
+    <title>ToDo App</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet"
@@ -22,29 +22,17 @@
 <div class="container">
     <div class="row">
         <div class="jumbotron">
-            <h1><a href="{{route('todo.index')}}">{{$title}}</a></h1>
+            <h1><a href="{{route('todo.index')}}">ToDo App</a></h1>
         </div>
     </div>
 </div>
 <div class="container">
-    <div class="row">
-      <ul>
-        @foreach ($todoitems as $todo)
-        <li>{{$todo}}</li>
-        @endforeach
-      </ul>
-    </div>
-</div>
+  <h1>Tasks</h1>
+
+      @yield('content')
+
 </div>
 
-<div class="container">
-    <ul class="nav nav-tabs">
-    </ul>
-    <div class="row">
-        <div class="col-md-12">
-        </div>
-    </div>
-</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
