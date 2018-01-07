@@ -28,7 +28,7 @@ Route::get( '/',
 		];
 
 		return view( 'home', [
-			'title' =>"List of my TODOS",
+			'title' =>"My TODOS",
 			'todoitems' => $todoitems
 		]  );
 	} );
